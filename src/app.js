@@ -42,6 +42,13 @@ app.get('/help/*', (req, res) => {
     })
 })
 
+app.get('/weather', (req, res) => {
+    res.send({
+        "forecast": "It's raining",
+        "location":"Philadelphia"
+    })
+})
+
 app.get('*', (req, res) => {
     res.render("error", {
         "errorMessage": "404 - Page not found"
