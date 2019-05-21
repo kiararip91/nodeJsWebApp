@@ -9,7 +9,7 @@ const publicFolderPath = path.join(__dirname, "../public")
 const partialsFolderPath = path.join(__dirname, '../templates/partials')
 const app = express()
 
-const port = process.ENV.port || 3000
+const port = process.env.PORT || 3000
 
 //Setup handleBars engine and views location 
 app.set('view engine', 'hbs')
