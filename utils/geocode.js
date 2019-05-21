@@ -6,7 +6,7 @@ const geocode = (location, callback) => {
     request({url, "json" : true}, (error, {body}) => {
         if(error){
             callback("Unable to connect to weather service", undefined)
-        }else if(body.error){
+        }else if(body.features.length == 0){
             callback("Unable to get location", undefined)
         }else{
             callback(undefined, {

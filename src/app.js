@@ -19,23 +19,23 @@ app.use(express.static(publicFolderPath))
 
 app.get('', (req, res) => {
     res.render("index", {
-        "title": "ciao",
-        "name":"paperino"
+        "title": "Weather",
+        "name":"Chiara Ripanti"
     })
 })
 
 app.get('/about', (req, res) => {
     res.render("about", {
-        "title": "about",
-        "name":"pluto"
+        "title": "About",
+        "name":"Pluto"
     })
 })
 
 app.get('/help', (req, res) => {
     res.render("help", {
-        "title": "help",
-        "name":"pippo",
-        "message": "this is a message"
+        "title": "Help",
+        "name":"Pippo",
+        "message": "this is the help page"
     })
 })
 
@@ -53,7 +53,7 @@ app.get('/weather', (req, res) => {
        })
     }
 
-    geocode(req.query.address, (error, {latitude, longitude, location})  => {
+    geocode(req.query.address, (error, {latitude, longitude, location} = {})  => {
         if(error){
             return res.send({error})
         }
